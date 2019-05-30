@@ -22,5 +22,19 @@ function buttonGenerator () {
         };
 }; 
 
+// CREATE THE ON CLICK FUNCTION THAT PASSES THE QUERY 
+$("searchButton").on("click", function (){
+    var searchTerm = $(emotionArray[i]).attr("data-name"); 
+    console.log (searchTerm); 
+    console.log ("Button clicked"); 
+})
+// variable for the search term 
+// variable for the query URL 
+
+// ajax call GET
+
+// then response 
+
+
 
 
