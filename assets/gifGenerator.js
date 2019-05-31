@@ -26,15 +26,45 @@ function buttonGenerator () {
 
 // CREATE THE ON CLICK FUNCTION THAT PASSES THE QUERY 
 $(document).on("click", ".searchButton", function () {
+    // create a variable for the search term 
     var searchTerm = $(this).data("name"); 
+    // log it to test that i'm getting it
     console.log (searchTerm); 
     console.log ("Button clicked");
+    // variable for the query URL
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=1GkFl3xoDoGUiLsnAoa9AybDWPVMNDkh&limit=10"; 
+    // testing the URL 
+    console.log (queryURL); 
+
+    $.ajax ({
+        url:queryURL,  
+        method: "GET" 
+    })
+
+    .then (function (response){
+        var searchResults = response.data; 
+
+        for (var i = 0; i < results.length; i++) {
+            var gifDiv = $("<div>");
+
+            // var rating = results[i].rating;
+
+            // var p = $("<p>").text("Rating: " + rating);
+
+            var gif = $("<img>");
+            gif.attr("src", results[i].images.fixed_height.url);
+
+            gifDiv.prepend(p);
+            gifDiv.prepend(personImage);
+
+            $("#results").prepend(gifDiv);
+          }
+          console.log(response); 
+    })
 })
 
-// variable for the search term 
-// variable for the query URL 
-
 // ajax call GET
+
 
 // then response 
 
