@@ -41,9 +41,11 @@ $(document).on("click", ".searchButton", function () {
         method: "GET" 
     })
 
+    // wait for a response 
     .then (function (response){
+        // variable to capture the response 
         var searchResults = response.data; 
-
+        // for loop going through the results of the response 
         for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div>");
 
@@ -54,8 +56,8 @@ $(document).on("click", ".searchButton", function () {
             var gif = $("<img>");
             gif.attr("src", results[i].images.fixed_height.url);
 
-            gifDiv.prepend(p);
-            gifDiv.prepend(personImage);
+            // gifDiv.prepend(p);
+            gifDiv.prepend(gif);
 
             $("#results").prepend(gifDiv);
           }
