@@ -46,18 +46,21 @@ $(document).on("click", ".searchButton", function () {
         // variable to capture the response 
         var searchResults = response.data; 
         // for loop going through the results of the response 
-        for (var i = 0; i < results.length; i++) {
+        for (var i = 0; i < searchResults.length; i++) {
             var gifDiv = $("<div>");
-            // var rating = results[i].rating;
-            // var p = $("<p>").text("Rating: " + rating);
             var gif = $("<img>");
-            gif.attr("src", results[i].images.fixed_height.url);
+            gif.attr("src", searchResults[i].images.fixed_height_still.url);
+            var rating = searchResults[i].rating;
+            console.log (rating); 
             // gifDiv.prepend(p);
             gifDiv.prepend(gif);
             // prepend the div witht the results 
             $("#results").prepend(gifDiv);
+
+            console.log(gifDiv); 
           }
           console.log(response); 
+          
     })
 })
 
