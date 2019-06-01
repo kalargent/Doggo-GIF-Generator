@@ -47,17 +47,22 @@ $(document).on("click", ".searchButton", function () {
         var searchResults = response.data; 
         // for loop going through the results of the response 
         for (var i = 0; i < searchResults.length; i++) {
+            // create a new div for each gif
             var gifDiv = $("<div>");
+            // each gif is an image 
             var gif = $("<img>");
+            // this is how you get the still image 
             gif.attr("src", searchResults[i].images.fixed_height_still.url);
+            // defines where to get the rating variable
             var rating = searchResults[i].rating;
+            // logs rating variable 
             console.log (rating); 
             // gifDiv.prepend(p);
-            gifDiv.prepend(gif);
+            gifDiv.prepend(gif,rating);
             // prepend the div witht the results 
-            $("#results").prepend(gifDiv);
+            $("#results").prepend(gifDiv)
 
-            console.log(gifDiv); 
+            // console.log(gifDiv); 
           }
           console.log(response); 
           
