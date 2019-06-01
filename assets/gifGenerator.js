@@ -54,7 +54,8 @@ $(document).on("click", ".searchButton", function () {
             // this is how you get the still image 
             gif.attr("src", searchResults[i].images.fixed_height_still.url);
             // defines where to get the rating variable
-            var rating = searchResults[i].rating;
+            var rating = $("<p>")
+            rating.text("This is rated " + searchResults[i].rating);
             // logs rating variable 
             console.log (rating); 
             // gifDiv.prepend(p);
