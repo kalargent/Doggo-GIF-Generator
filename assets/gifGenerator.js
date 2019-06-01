@@ -26,6 +26,7 @@ function buttonGenerator () {
 
 // CREATE THE ON CLICK FUNCTION THAT PASSES THE QUERY 
 $(document).on("click", ".searchButton", function () {
+    $("#results").empty(); 
     // create a variable for the search term 
     var searchTerm = $(this).data("name"); 
     // log it to test that i'm getting it
