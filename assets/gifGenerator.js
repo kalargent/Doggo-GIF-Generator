@@ -49,10 +49,10 @@ $(document).on("click", ".searchButton", function () {
         // for loop going through the results of the response 
         for (var i = 0; i < searchResults.length; i++) {
             // create a new div for each gif
-            var gifDiv = $("<div class= 'gif' data-state ='animate'>");
+            var gifDiv = $("<div>");
             
             // each gif is an image 
-            var gif = $("<img>");
+            var gif = $("<img class= 'gif' data-state ='animate'>");
             
             // this is how you get the animated GIF 
             gif.attr("src", searchResults[i].images.fixed_width.url);
@@ -97,7 +97,6 @@ $("#results").on("click", ".gif", function () {
     if (imageState === "animate") {
         $(this).attr("src", stillImage);
         $(this).attr("data-state", "still"); 
-        console.log("data-state"); 
         console.log("still");
     }
     
