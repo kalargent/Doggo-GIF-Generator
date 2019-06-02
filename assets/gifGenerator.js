@@ -87,32 +87,39 @@ $(document).on("click", ".searchButton", function () {
 
 })
 
+// ON CLICK FOR PAUSING AND ANIMATING
 $("#results").on("click", ".gif", function () {
+    // testing if on click works 
     console.log("clicked GIF"); 
+    // set the image state variable to track the state of the image
     var imageState = $(this).attr("data-state"); 
+    // sets the image to still URL 
     var stillImage = $(this).attr("data-still"); 
+    // sets the image to animate URL 
     var animatedImage = $(this).attr("data-animate"); 
     // console.log(animatedImage);
 
     if (imageState === "animate") {
+        // update the src to be the still image var
         $(this).attr("src", stillImage);
+        // update the data-state to still 
         $(this).attr("data-state", "still"); 
+        // testing that the if works 
         console.log("still");
     }
     
     else {
-        $(this).attr("src", animatedImage); 
+        // update the src to be the animated var 
+        $(this).attr("src", animatedImage);
+        // set the data-state to animate 
         $(this).attr("data-state", "animate")
+        // testing that else works
         console.log("animate"); 
 
     } 
 
 })
 
-// ajax call GET
-
-
-// then response 
 
 
 
