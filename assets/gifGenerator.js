@@ -49,11 +49,14 @@ $(document).on("click", ".searchButton", function () {
         // for loop going through the results of the response 
         for (var i = 0; i < searchResults.length; i++) {
             // create a new div for each gif
-            var gifDiv = $("<div>");
+            var gifDiv = $("<div class= 'gif'>");
             // each gif is an image 
             var gif = $("<img>");
             // this is how you get the still image 
-            gif.attr("src", searchResults[i].images.fixed_height_still.url);
+            gif.attr("src", searchResults[i].images.fixed_width.url);
+            gif.attr("data-animate", searchResults[i].images.fixed_width.url);
+            gif.attr("data-still", searchResults[i].images.fixed_width_still.url); 
+            gif.attr("data-state", "animate"); 
             // sets the rating in a separate para tag
             var rating = $("<p>")
             // sets the text for the rating para 
@@ -70,6 +73,17 @@ $(document).on("click", ".searchButton", function () {
           console.log(response); 
           
     })
+
+})
+
+$("#results").on("click", ".gif", function () {
+    console.log("clicked GIF"); 
+    var animated = $(this).attr("data-still"); 
+    console.log(animated);
+
+    // $(".gif") 
+    // gif.attr("src", searchResults[i].images.fixed_width_still.url);
+
 })
 
 // ajax call GET
