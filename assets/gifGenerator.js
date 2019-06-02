@@ -49,26 +49,37 @@ $(document).on("click", ".searchButton", function () {
         // for loop going through the results of the response 
         for (var i = 0; i < searchResults.length; i++) {
             // create a new div for each gif
-            var gifDiv = $("<div class= 'gif'>");
+            var gifDiv = $("<div class= 'gif' data-state ='animate'>");
+            
             // each gif is an image 
             var gif = $("<img>");
-            // this is how you get the still image 
+            
+            // this is how you get the animated GIF 
             gif.attr("src", searchResults[i].images.fixed_width.url);
+            
+            // this is how you get the animated gif, too
             gif.attr("data-animate", searchResults[i].images.fixed_width.url);
+            
+            // this is the still image url
             gif.attr("data-still", searchResults[i].images.fixed_width_still.url); 
-            gif.attr("data-state", "animate"); 
+            
+            //this is the state of the image when the page loads 
+            // gif.attr("data-state", "animate"); 
+            
             // sets the rating in a separate para tag
             var rating = $("<p>")
+            
             // sets the text for the rating para 
             rating.text("This is rated " + searchResults[i].rating);
+            
             // logs rating variable 
             console.log (rating); 
+            
             // gifDiv.prepend(p);
             gifDiv.prepend(gif,rating);
+            
             // prepend the div witht the results 
-            $("#results").prepend(gifDiv)
-
-            // console.log(gifDiv); 
+            $("#results").prepend(gifDiv); 
           }
           console.log(response); 
           
@@ -78,11 +89,24 @@ $(document).on("click", ".searchButton", function () {
 
 $("#results").on("click", ".gif", function () {
     console.log("clicked GIF"); 
-    var animated = $(this).attr("data-still"); 
-    console.log(animated);
+    var imageState = $(this).attr("data-state"); 
+    var stillImage = $(this).attr("data-still"); 
+    var animatedImage = $(this).attr("data-animate"); 
+    // console.log(animatedImage);
 
-    // $(".gif") 
-    // gif.attr("src", searchResults[i].images.fixed_width_still.url);
+    if (imageState === "animate") {
+        $(this).attr("src", stillImage);
+        $(this).attr("data-state", "still"); 
+        console.log("data-state"); 
+        console.log("still");
+    }
+    
+    else {
+        $(this).attr("src", animatedImage); 
+        $(this).attr("data-state", "animate")
+        console.log("animate"); 
+
+    } 
 
 })
 
