@@ -7,7 +7,7 @@ $(function (){
 
 // CREATE AN ARRAY TO POPULATE THE BUTTONS 
 
-var emotionArray = ["Excited", "Shocked", "Saddened", "Awed", "Wowed"]; 
+var emotionArray = ["Excited", "Shocked", "Saddened", "Awed", "Wowed", "Overjoyed", "Loved", "Scared"]; 
 
 // CREATE THE BUTTONS WHEN PAGE LOADS - COPIED FROM TRIVIA GAME
 function buttonGenerator () {
@@ -121,13 +121,16 @@ $("#results").on("click", ".gif", function () {
 })
 
 // ON CLICK FOR ADDING NEW SEARCH TERMS TO THE ARRAY 
-$("#addButton").on("click", function() {
+$("#addButton").on("click", function (event) {
     // test that on click works 
     console.log ("clicked on add"); 
     // a new variable to take in the search term that the user types 
-    var newButton = $("searchField").val(); 
+    var newButton = $("#searchText").val();
+    // test to see if the variable is retrieved  
     console.log (this.newButton); 
+    // send the variable to the array 
     emotionArray.push(this.newButton); 
+    // re-generate the buttons with the new one included 
     buttonGenerator(); 
 })
 
