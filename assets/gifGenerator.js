@@ -7,18 +7,18 @@ $(function (){
 
 // CREATE AN ARRAY TO POPULATE THE BUTTONS 
 
-var emotionArray = ["Excited", "Shocked", "Saddened", "Awed", "Wowed", "Overjoyed", "Loved", "Scared"]; 
+var doggos = ["Chihuahua", "Corgi", "Mastiff", "German Shepherd", "Pug", "Shiba Inu", "Chow Chow", "Yorkie"]; 
 
 // CREATE THE BUTTONS WHEN PAGE LOADS - COPIED FROM TRIVIA GAME
 function buttonGenerator () {
     //empty buttons 
         $("#buttons").empty(); 
         // for loop to display answer buttons on the screen 
-        for (var i = 0; i < emotionArray.length; i++) {
+        for (var i = 0; i < doggos.length; i++) {
             var a = $("<button>"); 
             a.addClass("searchButton"); 
-            a.attr("data-name", emotionArray[i]); 
-            a.text(emotionArray[i]); 
+            a.attr("data-name", doggos[i]); 
+            a.text(doggos[i]); 
             $("#buttons").append(a);
             console.log ("buttons created");    
         };
@@ -131,7 +131,7 @@ $("#addButton").on("click", function (event) {
     // test to see if the variable is retrieved  
     console.log (this.newButton); 
     // send the variable to the array 
-    emotionArray.push(newButton); 
+    doggos.push(newButton); 
     // re-generate the buttons with the new one included 
     buttonGenerator(); 
 })
