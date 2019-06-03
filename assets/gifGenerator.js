@@ -131,7 +131,7 @@ $("#addButton").on("click", function (event) {
     // test to see if the variable is retrieved  
     console.log (this.newButton); 
     // send the variable to the array 
-    emotionArray.push(this.newButton); 
+    emotionArray.push(newButton); 
     // re-generate the buttons with the new one included 
     buttonGenerator(); 
 })
