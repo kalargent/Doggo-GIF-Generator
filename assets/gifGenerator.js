@@ -122,6 +122,8 @@ $("#results").on("click", ".gif", function () {
 
 // ON CLICK FOR ADDING NEW SEARCH TERMS TO THE ARRAY 
 $("#addButton").on("click", function (event) {
+
+    event.preventDefault();
     // test that on click works 
     console.log ("clicked on add"); 
     // a new variable to take in the search term that the user types 
