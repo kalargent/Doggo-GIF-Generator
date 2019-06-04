@@ -7,7 +7,7 @@ $(function (){
 
 // CREATE AN ARRAY TO POPULATE THE BUTTONS 
 
-var doggos = ["Chihuahua", "Corgi", "Mastiff", "German Shepherd", "Pug", "Shiba Inu", "Chow Chow", "Yorkie"]; 
+var doggos = ["Chihuahua", "Corgi", "Mastiff", "German Shepherd", "Pug", "Shiba Inu", "Chow Chow", "Yorkie", "Snoop"]; 
 var searchTerm = ""; 
 
 // CREATE THE BUTTONS WHEN PAGE LOADS - COPIED FROM TRIVIA GAME
@@ -28,7 +28,7 @@ function buttonGenerator () {
 function GIFgenerator () {
     // $("#results").empty(); 
     // create a variable for the search term 
-    var searchTerm = $(this).data("name"); 
+    // searchTerm = $("#searchText").data("name"); 
     // log it to test that i'm getting it
     console.log (searchTerm); 
     console.log ("Button clicked");
@@ -91,7 +91,7 @@ $(document).on("click", ".searchButton", function () {
     $("#results").empty(); 
     offset = 10; 
     // create a variable for the search term 
-    searchTerm = $(this).data("name"); 
+    searchTerm = $(this).data("name") + " Dog"; 
     // log it to test that i'm getting it
     console.log (searchTerm); 
     console.log ("Button clicked");
@@ -198,7 +198,10 @@ $("#addButton").on("click", function (event) {
         doggos.push(newButton); 
         // re-generate the buttons with the new one included 
         $("#searchText").val(""); 
-        buttonGenerator(); 
+        buttonGenerator();
+        searchTerm = newButton;
+        offset = 10;  
+        GIFgenerator(); 
         }
     })
 
@@ -258,4 +261,6 @@ $("#loadMore").on("click", function (){
     }
     // $("#results").push(); 
 )})
+
+
 
