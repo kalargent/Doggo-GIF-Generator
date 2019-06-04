@@ -25,7 +25,7 @@ function buttonGenerator () {
 }; 
 
 // CREATE THE ON CLICK FUNCTION THAT PASSES THE QUERY 
-$(document).on("click", ".searchButton", function () {
+$(document).on("click", ".searchButton", function (displayGIF) {
     $("#results").empty(); 
     // create a variable for the search term 
     var searchTerm = $(this).data("name"); 
@@ -133,10 +133,60 @@ $("#addButton").on("click", function (event) {
     // send the variable to the array 
     doggos.push(newButton); 
     // re-generate the buttons with the new one included 
+    $("#searchText").val(""); 
     buttonGenerator(); 
 })
 
+$("#loadMore").on("click", function (){
+    console.log("clicked for more"); 
+    // prepend the existing results for the gif 
+    var queryURLmore = "https://api.giphy.com/v1/gifs/search?q=" + this.searchTerm + "&api_key=1GkFl3xoDoGUiLsnAoa9AybDWPVMNDkh&offset=10&limit=10"; 
+    console.log (queryURLmore); 
 
+    $.ajax ({
+        url:queryURLmore,  
+        method: "GET" 
+    })
 
-
+    .then (function (addMoreResponse) {
+        var searchResultsMore = response.data; 
+        // for loop going through the results of the response 
+        for (var i = 0; i < searchResultsMore.length; i++) {
+            // create a new div for each gif
+            var gifDiv = $("<div>");
+            
+            // each gif is an image 
+            var gif = $("<img class= 'gif' data-state ='animate'>");
+            
+            // this is how you get the animated GIF 
+            gif.attr("src", searchResultsMore[i].images.fixed_width.url);
+            
+            // this is how you get the animated gif, too
+            gif.attr("data-animate", searchResultsMore[i].images.fixed_width.url);
+            
+            // this is the still image url
+            gif.attr("data-still", searchResultsMore[i].images.fixed_width_still.url); 
+            
+            //this is the state of the image when the page loads 
+            // gif.attr("data-state", "animate"); 
+            
+            // sets the rating in a separate para tag
+            var rating = $("<p>")
+            
+            // sets the text for the rating para 
+            rating.text("This is rated " + searchResultsMore[i].rating);
+            
+            // logs rating variable 
+            console.log (rating); 
+            
+            // gifDiv.prepend(p);
+            gifDiv.prepend(gif,rating);
+            
+            // prepend the div witht the results 
+            $("#results").prepend(gifDiv); 
+          }
+          console.log(searchResultsMore); 
+    }
+    // $("#results").push(); 
+)})
 
