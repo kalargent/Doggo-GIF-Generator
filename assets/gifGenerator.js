@@ -8,6 +8,7 @@ $(function (){
 // CREATE AN ARRAY TO POPULATE THE BUTTONS 
 
 var doggos = ["Chihuahua", "Corgi", "Mastiff", "German Shepherd", "Pug", "Shiba Inu", "Chow Chow", "Yorkie"]; 
+var searchTerm = ""; 
 
 // CREATE THE BUTTONS WHEN PAGE LOADS - COPIED FROM TRIVIA GAME
 function buttonGenerator () {
@@ -88,8 +89,9 @@ function GIFgenerator () {
 // CREATE THE ON CLICK FUNCTION THAT PASSES THE QUERY 
 $(document).on("click", ".searchButton", function () {
     $("#results").empty(); 
+    offset = 10; 
     // create a variable for the search term 
-    var searchTerm = $(this).data("name"); 
+    searchTerm = $(this).data("name"); 
     // log it to test that i'm getting it
     console.log (searchTerm); 
     console.log ("Button clicked");
@@ -187,21 +189,26 @@ $("#addButton").on("click", function (event) {
     event.preventDefault();
     // test that on click works 
     console.log ("clicked on add"); 
-    // a new variable to take in the search term that the user types 
+    // a new variable to take in the search term that the user types
     var newButton = $("#searchText").val();
-    // test to see if the variable is retrieved  
-    console.log (newButton); 
-    // send the variable to the array 
-    doggos.push(newButton); 
-    // re-generate the buttons with the new one included 
-    $("#searchText").val(""); 
-    buttonGenerator(); 
-})
+        if (newButton != "") {
+        // test to see if the variable is retrieved  
+        console.log (newButton); 
+        // send the variable to the array 
+        doggos.push(newButton); 
+        // re-generate the buttons with the new one included 
+        $("#searchText").val(""); 
+        buttonGenerator(); 
+        }
+    })
 
+   
+var offset = 10; 
+// ON CLICK FOR LOADING MORE GIFS 
 $("#loadMore").on("click", function (){
     console.log("clicked for more"); 
     // prepend the existing results for the gif 
-    var queryURLmore = "https://api.giphy.com/v1/gifs/search?q=" + this.searchTerm + "&api_key=1GkFl3xoDoGUiLsnAoa9AybDWPVMNDkh&offset=10&limit=10"; 
+    var queryURLmore = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=1GkFl3xoDoGUiLsnAoa9AybDWPVMNDkh&offset=" +offset+ "&limit=10"; 
     console.log (queryURLmore); 
 
     $.ajax ({
@@ -210,7 +217,7 @@ $("#loadMore").on("click", function (){
     })
 
     .then (function (addMoreResponse) {
-        var searchResultsMore = response.data; 
+        var searchResultsMore = addMoreResponse.data; 
         // for loop going through the results of the response 
         for (var i = 0; i < searchResultsMore.length; i++) {
             // create a new div for each gif
@@ -247,6 +254,7 @@ $("#loadMore").on("click", function (){
             $("#results").prepend(gifDiv); 
           }
           console.log(searchResultsMore); 
+          offset +=10; 
     }
     // $("#results").push(); 
 )})
