@@ -24,8 +24,69 @@ function buttonGenerator () {
         };
 }; 
 
+function GIFgenerator () {
+    // $("#results").empty(); 
+    // create a variable for the search term 
+    var searchTerm = $(this).data("name"); 
+    // log it to test that i'm getting it
+    console.log (searchTerm); 
+    console.log ("Button clicked");
+    // variable for the query URL
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=1GkFl3xoDoGUiLsnAoa9AybDWPVMNDkh&limit=10"; 
+    // testing the URL 
+    console.log (queryURL); 
+
+    $.ajax ({
+        url:queryURL,  
+        method: "GET" 
+    })
+
+    // wait for a response 
+    .then (function (response){
+        // variable to capture the response 
+        var searchResults = response.data; 
+        // for loop going through the results of the response 
+        for (var i = 0; i < searchResults.length; i++) {
+            // create a new div for each gif
+            var gifDiv = $("<div>");
+            
+            // each gif is an image 
+            var gif = $("<img class= 'gif' data-state ='animate'>");
+            
+            // this is how you get the animated GIF 
+            gif.attr("src", searchResults[i].images.fixed_width.url);
+            
+            // this is how you get the animated gif, too
+            gif.attr("data-animate", searchResults[i].images.fixed_width.url);
+            
+            // this is the still image url
+            gif.attr("data-still", searchResults[i].images.fixed_width_still.url); 
+            
+            //this is the state of the image when the page loads 
+            // gif.attr("data-state", "animate"); 
+            
+            // sets the rating in a separate para tag
+            var rating = $("<p>")
+            
+            // sets the text for the rating para 
+            rating.text("This is rated " + searchResults[i].rating);
+            
+            // logs rating variable 
+            console.log (rating); 
+            
+            // gifDiv.prepend(p);
+            gifDiv.prepend(gif,rating);
+            
+            // prepend the div witht the results 
+            $("#results").prepend(gifDiv); 
+          }
+          console.log(response); 
+          
+    })
+}
+
 // CREATE THE ON CLICK FUNCTION THAT PASSES THE QUERY 
-$(document).on("click", ".searchButton", function (displayGIF) {
+$(document).on("click", ".searchButton", function () {
     $("#results").empty(); 
     // create a variable for the search term 
     var searchTerm = $(this).data("name"); 
