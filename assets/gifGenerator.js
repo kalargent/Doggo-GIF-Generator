@@ -190,7 +190,7 @@ $("#addButton").on("click", function (event) {
     // a new variable to take in the search term that the user types 
     var newButton = $("#searchText").val();
     // test to see if the variable is retrieved  
-    console.log (this.newButton); 
+    console.log (newButton); 
     // send the variable to the array 
     doggos.push(newButton); 
     // re-generate the buttons with the new one included 
