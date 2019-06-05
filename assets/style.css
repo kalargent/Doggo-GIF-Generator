@@ -1,0 +1,12 @@
+body {
+    /* background-image:url("assets/images/doggos.jpg");  */
+    background: pink;  
+}
+
+.jumbotron { 
+    background: hotpink; 
+}
+
+.container {
+    background: white; 
+}
