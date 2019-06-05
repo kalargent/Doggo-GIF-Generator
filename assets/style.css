@@ -32,9 +32,22 @@ body {
     align-content: center; 
 }
 
+input[type=submit] {
+    background: #D8DC4A; 
+    border: black, 10px; 
+    margin: 5px; 
+    font-weight: bold;
+    color: white; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    text-shadow:
+		-1px -1px 0 #BDC130,
+		1px -1px 0 #BDC130,
+		-1px 1px 0 #BDC130,
+		1px 1px 0 #BDC130;
+}
+
 #results { 
     /* background: gray;  */
-    align-content: center; 
 }
 
 .searchButton {
