@@ -183,7 +183,7 @@ $("#results").on("click", ".gif", function () {
 
 })
 
-// ON CLICK FOR ADDING NEW SEARCH TERMS TO THE ARRAY 
+// ON CLICK FOR ADDING NEW SEARCH TERMS TO THE ARRAY -- THIS IS WHERE THE BUG IS 
 $("#addButton").on("click", function (event) {
 
     event.preventDefault();
@@ -197,6 +197,7 @@ $("#addButton").on("click", function (event) {
         // send the variable to the array 
         doggos.push(newButton); 
         // re-generate the buttons with the new one included 
+        $("#results"). empty(); 
         $("#searchText").val(""); 
         buttonGenerator();
         searchTerm = newButton;
