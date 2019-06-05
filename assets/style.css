@@ -64,20 +64,6 @@ input[type=submit] {
 		1px 1px 0 #BDC130;
 }
 
-#add {
-    background: #D8DC4A; 
-    border: black, 10px; 
-    margin: 5px; 
-    font-weight: bold;
-    color: white; 
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    text-shadow:
-		-1px -1px 0 #BDC130,
-		1px -1px 0 #BDC130,
-		-1px 1px 0 #BDC130,
-		1px 1px 0 #BDC130;
-}
-
 .btn-primary {
     background-color: #D8DC4A; 
     border: #D8DC4A; 
@@ -87,5 +73,5 @@ input[type=submit] {
 		1px -1px 0 #BDC130,
 		-1px 1px 0 #BDC130,
         1px 1px 0 #BDC130;
-    margin: 5px; 
+    margin-bottom: 5px; 
 }
