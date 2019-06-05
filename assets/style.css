@@ -5,7 +5,7 @@ body {
 }
 
 .jumbotron { 
-    background: #B4829D; 
+    background: #C6AED2; 
     padding: 10px; 
 }
 
@@ -15,10 +15,14 @@ body {
     font-weight: bolder; 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
     text-shadow:
-		-2px -2px 0 #C6AED2,
-		2px -2px 0 #C6AED2,
-		-2px 2px 0 #C6AED2,
-		2px 2px 0 #C6AED2;
+		-2px -2px 0 #B4829D,
+		2px -2px 0 #B4829D,
+		-2px 2px 0 #B4829D,
+		2px 2px 0 #B4829D;
+}
+
+.lead {
+    text-align: center; 
 }
 
 .container {
@@ -62,6 +66,9 @@ input[type=submit] {
 		1px -1px 0 #B4829D,
 		-1px 1px 0 #B4829D,
         1px 1px 0 #B4829D;
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #B4829D; 
 }
 
 .input[type=submit]:hover {
@@ -70,6 +77,22 @@ input[type=submit] {
 
 #results { 
     /* background: gray;  */
+}
+
+.gif {
+    border-style: solid; 
+    border-width: 2px; 
+    border-color: #B4829D; 
+}
+
+p {
+    color: white; 
+    font-weight: bold; 
+    text-shadow:
+		-1px -1px 0 #B4829D,
+		1px -1px 0 #B4829D,
+		-1px 1px 0 #B4829D,
+		1px 1px 0 #B4829D;
 }
 
 .searchButton {
@@ -83,7 +106,10 @@ input[type=submit] {
 		-1px -1px 0 #B4829D,
 		1px -1px 0 #B4829D,
 		-1px 1px 0 #B4829D,
-		1px 1px 0 #B4829D;
+        1px 1px 0 #B4829D;
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #B4829D; 
 }
 
 .searchButton:hover {
@@ -101,12 +127,27 @@ input[type=submit] {
 		-1px -1px 0 #B4829D,
 		1px -1px 0 #B4829D,
 		-1px 1px 0 #B4829D,
-		1px 1px 0 #B4829D;
+        1px 1px 0 #B4829D;
+        border-style: solid; 
+        border-width: 1px; 
+        border-color: #B4829D; 
 }
 
 .active, .btn-primary:hover {
     background-color: #B4829D; 
 }
+
+  /* FOOTER  */
+  .footer { 
+    position: fixed;
+    bottom: 0;  
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    background: #C6AED2;
+    text-align: center; 
+    
+  }
 
 
 
