@@ -7,7 +7,7 @@ $(function (){
 
 // CREATE AN ARRAY TO POPULATE THE BUTTONS 
 
-var doggos = ["Chihuahua", "Corgi", "Mastiff", "German Shepherd", "Pug", "Shiba Inu", "Chow Chow", "Yorkie", "Snoop"]; 
+var doggos = ["Chihuahua", "Corgi", "Mastiff", "German Shepherd", "Pug", "Shiba Inu", "Akita", "Yorkie", "Snoop"]; 
 var searchTerm = ""; 
 
 // CREATE THE BUTTONS WHEN PAGE LOADS - COPIED FROM TRIVIA GAME
@@ -16,7 +16,7 @@ function buttonGenerator () {
         $("#buttons").empty(); 
         // for loop to display answer buttons on the screen 
         for (var i = 0; i < doggos.length; i++) {
-            var a = $("<button>"); 
+            var a = $("<btn btn-primary>"); 
             a.addClass("searchButton"); 
             a.attr("data-name", doggos[i]); 
             a.text(doggos[i]); 

@@ -10,27 +10,29 @@
 <body>
 
 <div class="jumbotron">
-    <h3 class="display-6">Doggo GIF Generator!</h3>
+    <h3 class="display-4">Doggo GIF Generator!</h3>
 </div>
     
 
 <div class="container">
-    <!-- PLACEHOLDER FOR BUTTONS -->
-    <div id="buttons"></div><br>
+    <div class="row" id="buttons">
+        <!-- PLACEHOLDER FOR BUTTONS -->
+        <!-- <div id="buttons"></div><br> -->
+    </div>
 
     <!-- FORM FOR SEARCHING -->
-    <div id="form section">
+    <div class = "row" id="form section">
         <form id="search">
             <label form="searchTerm">Search for anything to see GIFs!</label>
             <input type="text" id="searchText"><br>
-            <input type="submit" id="addButton" value="Add a new GIF!">
+            <input class ="add" type="submit" id="addButton" value="Add a new GIF!">
         </form>
     </div><br>
 
     <!-- THIS IS WHERE THE GIFs GO -->
+    <div id="results"></div>
     <button type="button" class="btn btn-primary" id="loadMore">Load 10 More GIFs!</button>
     <br>
-    <div id="results"></div>
 
     <!-- THIS IS WHERE WE LINK THE JAVASCRIPT -->
     <script src = "assets/gifGenerator.js"></script>

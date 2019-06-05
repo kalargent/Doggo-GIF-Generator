@@ -1,12 +1,78 @@
 body {
-    /* background-image:url("assets/images/doggos.jpg");  */
-    background: pink;  
+    background-image:url("../assets/images/doggos.jpg"); 
+    
+    
 }
 
 .jumbotron { 
-    background: hotpink; 
+    background: #D8DC4A; 
+    padding: 10px; 
+}
+
+.display-4 {
+    color: white;
+    text-align: center; 
+    font-weight: bolder; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
+    text-shadow:
+		-2px -2px 0 #BDC130,
+		2px -2px 0 #BDC130,
+		-2px 2px 0 #BDC130,
+		2px 2px 0 #BDC130;
 }
 
 .container {
-    background: white; 
+    background: #D3C6B9; 
+    border-color: #D8DC4A; 
+    border: 30px; 
+}
+
+.row {
+    padding: 10px; 
+    align-content: center; 
+}
+
+#results { 
+    /* background: gray;  */
+    align-content: center; 
+}
+
+.searchButton {
+    background: #D8DC4A; 
+    border: black, 10px; 
+    margin: 5px; 
+    font-weight: bold;
+    color: white; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    text-shadow:
+		-1px -1px 0 #BDC130,
+		1px -1px 0 #BDC130,
+		-1px 1px 0 #BDC130,
+		1px 1px 0 #BDC130;
+}
+
+#add {
+    background: #D8DC4A; 
+    border: black, 10px; 
+    margin: 5px; 
+    font-weight: bold;
+    color: white; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    text-shadow:
+		-1px -1px 0 #BDC130,
+		1px -1px 0 #BDC130,
+		-1px 1px 0 #BDC130,
+		1px 1px 0 #BDC130;
+}
+
+.btn-primary {
+    background-color: #D8DC4A; 
+    border: #D8DC4A; 
+    font-weight: bold; 
+    text-shadow:
+		-1px -1px 0 #BDC130,
+		1px -1px 0 #BDC130,
+		-1px 1px 0 #BDC130,
+        1px 1px 0 #BDC130;
+    margin: 5px; 
 }
