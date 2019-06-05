@@ -73,8 +73,12 @@ input[type=submit] {
     background-color: #BDC130; 
 }
 
+.col-sm {
+    margin: 5px; 
+}
+
 #results { 
-    /* background: gray;  */
+    align-content: center; 
 }
 
 .gif {

@@ -112,7 +112,7 @@ $(document).on("click", ".searchButton", function () {
         // for loop going through the results of the response 
         for (var i = 0; i < searchResults.length; i++) {
             // create a new div for each gif
-            var gifDiv = $("<div>");
+            var gifDiv = $("<div col-sm>");
             
             // each gif is an image 
             var gif = $("<img class= 'gif' data-state ='animate'>");
