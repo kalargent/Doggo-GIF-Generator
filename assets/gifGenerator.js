@@ -16,7 +16,7 @@ function buttonGenerator () {
         $("#buttons").empty(); 
         // for loop to display answer buttons on the screen 
         for (var i = 0; i < doggos.length; i++) {
-            var a = $("<btn btn-primary>"); 
+            var a = $("<button>"); 
             a.addClass("searchButton"); 
             a.attr("data-name", doggos[i]); 
             a.text(doggos[i]); 
