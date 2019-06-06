@@ -86,6 +86,7 @@ input[type=submit] {
     border-style: solid; 
     border-width: 2px; 
     border-color: #B4829D; 
+    margin: 5px; 
 }
 
 p {
@@ -151,6 +152,8 @@ p {
     text-align: center; 
     
   }
+
+  
 
 
 
