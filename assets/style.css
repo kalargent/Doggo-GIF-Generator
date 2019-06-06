@@ -1,5 +1,6 @@
 body {
-    background-image:url("../assets/images/doggos.jpg");     
+    background-image:url("../assets/images/doggos2.jpg");  
+    /* background-repeat: no-repeat;     */
 }
 
 .jumbotron { 
